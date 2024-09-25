@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import keyboard
+import pandas as pd
 
 # Data das próximas corridas
 data_corridas = [
@@ -109,9 +110,8 @@ def gerar_grafico_interativo():
     plt.show()
 
 def mostrar_equipes_formula_e():
-    print("Equipes da Fórmula E:")
-    for equipe in equipes_formula_e:
-        print(f"{equipe}: {', '.join(equipes_formula_e[equipe])}")
+    df = pd.DataFrame(list(equipes_formula_e.items()), columns=["Equipe", "Pilotos"])
+    print(df)
 
 def redirect_formula_e_website():
     print("Você será redirecionado para o site oficial da Fórmula E...")
@@ -126,161 +126,157 @@ def mostrar_informacoes_equipe_favorita():
     for i, equipe in enumerate(equipes_formula_e):
         print(f"{i+1}. {equipe}")
 
-    escolha = input("Digite o número da sua escolha: ")
+    while True:
+        escolha = input("Digite o número da sua escolha: ")
+        if escolha.isdigit() and 1 <= int(escolha) <= len(equipes_formula_e):
+            equipe_favorita = list(equipes_formula_e.keys())[int(escolha) - 1]
+            break
+        else:
+            print("Opção inválida. Por favor, escolha novamente.")
 
-    if escolha.isdigit() and 1 <= int(escolha) <= len(equipes_formula_e):
-        equipe_favorita = list(equipes_formula_e.keys())[int(escolha) - 1]
-        print(f"Informações sobre a equipe {equipe_favorita}:")
-        # Informações sobre a equipe
-        equipe_info = {
-            "Audi Sport ABT Schaeffler": {
-                "pais": "Alemanha",
-                "ano_criacao": 2009,
-                "titulos": 4,
-                "seguidores": 100000,
-                "instagram": "audisport"
-            },
-            "BMW i Andretti Motorsport": {
-                "pais": "EUA",
-                "ano_criacao": 2013,
-                "titulos": 2,
-                "seguidores": 50000,
-                "instagram": "bmwiandrettimotorsport"
-            },
-            "DS Techeetah": {
-                "pais": "China",
-                "ano_criacao": 2016,
-                "titulos": 3,
-                "seguidores": 80000,
-                "instagram": "dstecheetah"
-            },
-            "Envision Virgin Racing": {
-                "pais": "Reino Unido",
-                "ano_criacao": 2013,
-                "titulos": 1,
-                "seguidores": 40000,
-                "instagram": "envisionvirginracing"
-            },
-            "Jaguar TCS Racing": {
-                "pais": "Reino Unido",
-                "ano_criacao": 2016,
-                "titulos": 1,
-                "seguidores": 30000,
-                "instagram": "jaguarracing"
-            },
-            "Mahindra Racing": {
-                "pais": "Índia",
-                "ano_criacao": 2014,
-                "titulos": 1,
-                "seguidores": 20000,
-                "instagram": "mahindraracing"
-            },
-            "Mercedes-EQ Formula E Team": {
-                "pais": "Alemanha",
-                "ano_criacao": 2019,
-                "titulos": 2,
-                "seguidores": 150000,
-                "instagram": "mercedeseq"
-            },
-            "NIO 333 FE Team": {
-                "pais": "China",
-                "ano_criacao": 2014,
-                "titulos": 0,
-                "seguidores": 10000,
-                "instagram": "nio333fe"
-            },
-            "Porsche Formula E Team": {
-                "pais": "Alemanha",
-                "ano_criacao": 2019,
-                "titulos": 1,
-                "seguidores": 120000,
-                "instagram": "porscheformulae"
-            },
-            "Rokit Venturi Racing": {
-                "pais": "Mônaco",
-                "ano_criacao": 2014,
-                "titulos": 0,
-                "seguidores": 15000,
-                "instagram": "rokitventuriracing"
-            },
-            "TAG Heuer Porsche Formula E Team": {
-                "pais": "Alemanha",
-                "ano_criacao": 2019,
-                "titulos": 1,
-                "seguidores": 100000,
-                "instagram": "tagheuerporsche"
-            }
+    equipe_info = {
+        "Audi Sport ABT Schaeffler": {
+            "pais": "Alemanha",
+            "ano_criacao": 2009,
+            "titulos": 4,
+            "seguidores": 100000,
+            "instagram": "audisport"
+        },
+        "BMW i Andretti Motorsport": {
+            "pais": "EUA",
+            "ano_criacao": 2013,
+            "titulos": 2,
+            "seguidores": 50000,
+            "instagram": "bmwiandrettimotorsport"
+        },
+        "DS Techeetah": {
+            "pais": "China",
+            "ano_criacao": 2016,
+            "titulos": 3,
+            "seguidores": 80000,
+            "instagram": "dstecheetah"
+        },
+        "Envision Virgin Racing": {
+            "pais": "Reino Unido",
+            "ano_criacao": 2013,
+            "titulos": 1,
+            "seguidores": 40000,
+            "instagram": "envisionvirginracing"
+        },
+        "Jaguar TCS Racing": {
+            "pais": "Reino Unido",
+            "ano_criacao": 2016,
+            "titulos": 1,
+            "seguidores": 30000,
+            "instagram": "jaguarracing"
+        },
+        "Mahindra Racing": {
+            "pais": "Índia",
+            "ano_criacao": 2014,
+            "titulos": 1,
+            "seguidores": 20000,
+            "instagram": "mahindraracing"
+        },
+        "Mercedes-EQ Formula E Team": {
+            "pais": "Alemanha",
+            "ano_criacao": 2019,
+            "titulos": 2,
+            "seguidores": 150000,
+            "instagram": "mercedeseq"
+        },
+        "NIO 333 FE Team": {
+            "pais": "China",
+            "ano_criacao": 2014,
+            "titulos": 0,
+            "seguidores": 10000,
+            "instagram": "nio333fe"
+        },
+        "Porsche Formula E Team": {
+            "pais": "Alemanha",
+            "ano_criacao": 2019,
+            "titulos": 1,
+            "seguidores": 120000,
+            "instagram": "porscheformulae"
+        },
+        "Rokit Venturi Racing": {
+            "pais": "Mônaco",
+            "ano_criacao": 2014,
+            "titulos": 0,
+            "seguidores": 15000,
+            "instagram": "rokitventuriracing"
+        },
+        "TAG Heuer Porsche Formula E Team": {
+            "pais": "Alemanha",
+            "ano_criacao": 2019,
+            "titulos": 1,
+            "seguidores": 100000,
+            "instagram": "tagheuerporsche"
         }
+    }
 
-        equipe_data = equipe_info[equipe_favorita]
-        print(f"Pais: {equipe_data['pais']}")
-        print(f"Ano de criação: {equipe_data['ano_criacao']}")
-        print(f"Títulos: {equipe_data['titulos']}")
-        print(f"Seguidores: {equipe_data['seguidores']}")
-        print(f"Instagram: @{equipe_data['instagram']}")
+    print(f"Informações sobre a equipe {equipe_favorita}:")
+    equipe_data = equipe_info[equipe_favorita]
+    print(f"Pais: {equipe_data['pais']}")
+    print(f"Ano de criação: {equipe_data['ano_criacao']}")
+    print(f"Títulos: {equipe_data['titulos']}")
+    print(f"Seguidores: {equipe_data['seguidores']}")
+    print(f"Instagram: @{equipe_data['instagram']}")
 
-        # Curiosidades sobre a equipe
-        equipe_curiosidades = {
-            "Audi Sport ABT Schaeffler": [
-                "A equipe Audi Sport ABT Schaeffler é uma das mais bem-sucedidas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2017 e 2018."
-            ],
-            "BMW i Andretti Motorsport": [
-                "A equipe BMW i Andretti Motorsport é uma das mais novas da Fórmula E.",
-                "Eles conquistaram o título de equipes em 2020."
-            ],
-            "DS Techeetah": [
-                "A equipe DS Techeetah é uma das mais bem-sucedidas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2019 e 2020."
-            ],
-            "Envision Virgin Racing": [
-                "A equipe Envision Virgin Racing é uma das mais antigas da Fórmula E.",
-                "Eles conquistaram o título de equipes em 2019."
-            ],
-            "Jaguar TCS Racing": [
-                "A equipe Jaguar TCS Racing é uma das mais novas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2020."
-            ],
-            "Mahindra Racing": [
-                "A equipe Mahindra Racing é uma das mais antigas da Fórmula E.",
-                "Eles conquistaram o título de equipes em 2017."
-            ],
-            "Mercedes-EQ Formula E Team": [
-                "A equipe Mercedes-EQ Formula E Team é uma das mais bem-sucedidas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2020 e 2021."
-            ],
-            "NIO 333 FE Team": [
-                "A equipe NIO 333 FE Team é uma das mais antigas da Fórmula E.",
-                "Eles conquistaram o título de equipes em 2018."
-            ],
-            "Porsche Formula E Team": [
-                "A equipe Porsche Formula E Team é uma das mais bem-sucedidas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2021."
-            ],
-            "Rokit Venturi Racing": [
-                "A equipe Rokit Venturi Racing é uma das mais antigas da Fórmula E.",
-                "Eles conquistaram o título de equipes em 2019."
-            ],
-            "TAG Heuer Porsche Formula E Team": [
-                "A equipe TAG Heuer Porsche Formula E Team é uma das mais bem-sucedidas da Fórmula E.",
-                "Eles conquistaram o título de pilotos em 2021."
-            ]
-        }
+    while True:
+        continuar = input("Você deseja continuar utilizando o programa? (sim/não): ")
+        if continuar.casefold() == "sim":
+            break
+        elif continuar.casefold() == "não":
+            print("Você escolheu sair do programa. Até logo!")
+            exit()
+        else:
+            print("Opção inválida. Por favor, escolha novamente.")
 
-        while True:
-            continuar = input("Você deseja continuar utilizando o programa? (sim/não): ")
-            if continuar.casefold() == "sim":
-                # Continuar mostrando informações sobre as equipes
-                mostrar_informacoes_equipe_favorita()
-                break
-            elif continuar.casefold() == "não":
-                # Voltar ao menu principal
-                print("Você escolheu voltar ao menu principal.")
-                # Chamar a função do menu principal aqui
-                main()
-                break
-            else:
-                print("Opção inválida. Por favor, escolha novamente.")
+def adicionar_equipe():
+    equipe_nome = input("Digite o nome da equipe: ")
+    equipe_pilotos = input("Digite os pilotos da equipe (separados por vírgula): ")
+    equipe_pilotos = [piloto.strip() for piloto in equipe_pilotos.split(",")]
+    equipes_formula_e[equipe_nome] = equipe_pilotos
+    print("Equipe adicionada com sucesso!")
+
+def atualizar_equipe():
+    equipe_nome = input("Digite o nome da equipe que deseja atualizar: ")
+    if equipe_nome in equipes_formula_e:
+        equipe_pilotos = input("Digite os novos pilotos da equipe (separados por vírgula): ")
+        equipe_pilotos = [piloto.strip() for piloto in equipe_pilotos.split(",")]
+        equipes_formula_e[equipe_nome] = equipe_pilotos
+        print("Equipe atualizada com sucesso!")
+    else:
+        print("Equipe não encontrada.")
+
+def excluir_equipe():
+    equipe_nome = input("Digite o nome da equipe que deseja excluir: ")
+    if equipe_nome in equipes_formula_e:
+        del equipes_formula_e[equipe_nome]
+        print("Equipe excluída com sucesso!")
+    else:
+        print("Equipe não encontrada.")
+
+def funcionario_menu():
+    while True:
+        print("Menu do Funcionário:")
+        print("1. Adicionar equipe")
+        print("2. Atualizar equipe")
+        print("3. Excluir equipe")
+        print("4. Voltar ao menu principal")
+
+        escolha = input("Digite a sua escolha: ")
+
+        if escolha == "1":
+            adicionar_equipe()
+        elif escolha == "2":
+            atualizar_equipe()
+        elif escolha == "3":
+            excluir_equipe()
+        elif escolha == "4":
+            break
+        else:
+            print("Opção inválida. Por favor, escolha novamente.")
 
 def main():
     while True:
@@ -292,6 +288,7 @@ def main():
         print("4. Redirecionar para o site oficial da Fórmula E")
         print("5. Mostrar informações sobre a equipe favorita")
         print("6. Sair do programa")
+        print("7. Funcionário")
 
         escolha = input("Digite a sua escolha: ")
 
@@ -308,10 +305,12 @@ def main():
         elif escolha == "6":
             print("Você escolheu sair do programa. Até logo!")
             exit()
+        elif escolha == "7":
+            funcionario_menu()
         else:
             print("Opção inválida. Por favor, escolha novamente.")
 
-        continuar = input("Você deseja continuar utilizando o programa? (Sim/Não): ")
+        continuar = input("Você deseja continuar utilizando o programa? (sim/não): ")
         while True:
             if continuar.lower() == "sim":
                 break
@@ -320,7 +319,7 @@ def main():
                 exit()
             else:
                 print("Opção inválida. Por favor, escolha novamente.")
-                continuar = input("Você deseja continuar utilizando o programa? (Sim/Não): ")
+                continuar = input("Você deseja continuar utilizando o programa? (sim/não): ")
 
         limpar_console()
 

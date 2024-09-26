@@ -6,55 +6,60 @@ import pandas as pd
 
 # Data das próximas corridas
 data_corridas = [
-    "13 de janeiro de 2024",
-    "26 de janeiro de 2024",
-    "27 de janeiro de 2024",
-    "10 de fevereiro de 2024",
-    "24 de fevereiro de 2024",
-    "16 de março de 2024",
-    "30 de março de 2024",
-    "13 de abril de 2024",
-    "14 de abril de 2024",
-    "27 de abril de 2024",
-    "25 de maio de 2024",
-    "8 de junho de 2024",
-    "29 de junho de 2024",
-    "20 de julho de 2024",
-    "21 de julho de 2024"
+    "7 de Dezembro de 2024",
+    "11 de Janeiro de 2025",
+    "14 de Fevereiro de 2025",
+    "15 de Fevereiro de 2025",
+    "8 de Março de 2025",
+    "12 de Abril de 2025",
+    "3 de Maio de 2025",
+    "4 de Maio de 2025",
+    "17 de Maio de 2025",
+    "18 de Maio de 2025",
+    "31 de Maio de 2025",
+    "1 de Junho de 2025",
+    "21 de Junho de 2025",
+    "12 de Julho de 2025",
+    "13 de Julho de 2025",
+    "26 de Julho de 2025",
+    "27 de Julho de 2025",
 ]
 
 # Local onde serão as próximas corridas
 local_corridas = [
+    "Brasil",
     "México",
     "Arábia Saudita",
     "Arábia Saudita",
     "A ser confirmado",
-    "A ser confirmado",
-    "Brasil",
+    "EUA",
     "Japão",
-    "Itália",
-    "Itália",
     "Mônaco",
-    "A ser cofirmado",
+    "Mônaco",
+    "Japão",
+    "Japão",
+    "China",
+    "China",
     "Indonésia",
-    "Estados Unidos (EUA)",
+    "Alemanha",
+    "Alemanha",
     "Reino Unido",
     "Reino Unido",
 ]
 
 # Equipes presentes na Fórmula E
 equipes_formula_e = {
-    "Audi Sport ABT Schaeffler": ["Lucas di Grassi", "René Rast"],
-    "BMW i Andretti Motorsport": ["António Félix da Costa", "Alexander Sims"],
-    "DS Techeetah": ["Jean-Éric Vergne", "André Lotterer"],
-    "Envision Virgin Racing": ["Sam Bird", "Robin Frijns"],
-    "Jaguar TCS Racing": ["Mitch Evans", "James Calado"],
-    "Mahindra Racing": ["Jérôme d'Ambrosio", "Pascal Wehrlein"],
-    "Mercedes-EQ Formula E Team": ["Stoffel Vandoorne", "Nyck de Vries"],
-    "NIO 333 FE Team": ["Oliver Turvey", "Tom Blomqvist"],
+    "Audi Sport ABT Schaeffler": ["Lucas di Grassi", "Nico Muller"],
+    "BMW i Andretti Motorsport": ["Jake Dennis", "Norman Nato"],
+    "DS Penske": ["Jean-Éric Vergne", "Stoffel Vandoorne"],
+    "Envision Virgin Racing": ["Sebastien Buemi", "Robin Frijns"],
+    "ERT Formula E Team": ["Dan Ticktum", "Sergio Sette Camara"],
+    "Jaguar TCS Racing": ["Mitch Evans", "Nick Cassidy"],
+    "Mahindra Racing": ["Edoardo Morata", "Nyck De Vries"],
+    "Maserati MSG Racing": ["Jehan Daruvala", "Maxilian Gunther"],
+    "Neom McLaren Formula E Team": ["Jack Hughes", "Sam Bird"],
     "Porsche Formula E Team": ["André Lotterer", "Pascal Wehrlein"],
-    "Rokit Venturi Racing": ["Felipe Massa", "Edoardo Mortara"],
-    "TAG Heuer Porsche Formula E Team": ["Neel Jani", "André Lotterer"]
+    "Nissan Formula E Team": ["Oliver Rowland", "Sacha Fenetraz"]
 }
 
 def mostrar_data_corridas():
@@ -138,77 +143,77 @@ def mostrar_informacoes_equipe_favorita():
         "Audi Sport ABT Schaeffler": {
             "pais": "Alemanha",
             "ano_criacao": 2009,
-            "titulos": 4,
-            "seguidores": 100000,
-            "instagram": "audisport"
+            "titulos": 14,
+            "seguidores": 74500,
+            "instagram": "abtmotorsport"
         },
         "BMW i Andretti Motorsport": {
             "pais": "EUA",
             "ano_criacao": 2013,
-            "titulos": 2,
-            "seguidores": 50000,
-            "instagram": "bmwiandrettimotorsport"
+            "titulos": 11,
+            "seguidores": 26000,
+            "instagram": "andrettife"
         },
-        "DS Techeetah": {
+        "DS Penske": {
             "pais": "China",
             "ano_criacao": 2016,
             "titulos": 3,
-            "seguidores": 80000,
-            "instagram": "dstecheetah"
+            "seguidores": 48900,
+            "instagram": "ds_penske_fe"
         },
         "Envision Virgin Racing": {
             "pais": "Reino Unido",
             "ano_criacao": 2013,
-            "titulos": 1,
+            "titulos": 16,
             "seguidores": 40000,
             "instagram": "envisionvirginracing"
+        },
+        "ERT Formula E Team": {
+            "pais": "China",
+            "ano_criacao": 2023,
+            "titulos": 2,
+            "seguidores": 18300,
+            "instagram": "ertformulaaeteam"
         },
         "Jaguar TCS Racing": {
             "pais": "Reino Unido",
             "ano_criacao": 2016,
-            "titulos": 1,
+            "titulos": 16,
             "seguidores": 30000,
             "instagram": "jaguarracing"
         },
         "Mahindra Racing": {
             "pais": "Índia",
             "ano_criacao": 2014,
-            "titulos": 1,
+            "titulos": 5,
             "seguidores": 20000,
             "instagram": "mahindraracing"
         },
-        "Mercedes-EQ Formula E Team": {
-            "pais": "Alemanha",
-            "ano_criacao": 2019,
-            "titulos": 2,
-            "seguidores": 150000,
-            "instagram": "mercedeseq"
-        },
-        "NIO 333 FE Team": {
-            "pais": "China",
-            "ano_criacao": 2014,
-            "titulos": 0,
-            "seguidores": 10000,
-            "instagram": "nio333fe"
-        },
-        "Porsche Formula E Team": {
-            "pais": "Alemanha",
-            "ano_criacao": 2019,
-            "titulos": 1,
-            "seguidores": 120000,
-            "instagram": "porscheformulae"
-        },
-        "Rokit Venturi Racing": {
+        "Maserati MSG Racing": {
             "pais": "Mônaco",
             "ano_criacao": 2014,
-            "titulos": 0,
-            "seguidores": 15000,
-            "instagram": "rokitventuriracing"
+            "titulos": 10,
+            "seguidores": 167000,
+            "instagram": "maseratimsg"
+        },
+        "Neom McLaren Formula E Team": {
+            "pais": "Inglaterra",
+            "ano_criacao": 2022,
+            "titulos": 8,
+            "seguidores": 164000,
+            "instagram": "mclarenfe"
+        },
+        "Nissan Formula E Team": {
+            "pais": "França",
+            "ano_criacao": 2019,
+            "titulos": 19,
+            "seguidores": 871000,
+            "instagram": "nismo"
         },
         "TAG Heuer Porsche Formula E Team": {
             "pais": "Alemanha",
             "ano_criacao": 2019,
-            "titulos": 1,
+            "titulos": 12,
             "seguidores": 100000,
             "instagram": "tagheuerporsche"
         }

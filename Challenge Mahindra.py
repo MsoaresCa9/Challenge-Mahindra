@@ -58,7 +58,7 @@ equipes_formula_e = {
     "Mahindra Racing": ["Edoardo Morata", "Nyck De Vries"],
     "Maserati MSG Racing": ["Jehan Daruvala", "Maxilian Gunther"],
     "Neom McLaren Formula E Team": ["Jack Hughes", "Sam Bird"],
-    "Porsche Formula E Team": ["André Lotterer", "Pascal Wehrlein"],
+    "TAG Heuer Porsche Formula E Team": ["André Lotterer", "Pascal Wehrlein"],
     "Nissan Formula E Team": ["Oliver Rowland", "Sacha Fenetraz"]
 }
 
@@ -138,7 +138,7 @@ def mostrar_informacoes_equipe_favorita():
             break
         else:
             print("Opção inválida. Por favor, escolha novamente.")
-
+#informações sobre as equipes
     equipe_info = {
         "Audi Sport ABT Schaeffler": {
             "pais": "Alemanha",
@@ -227,16 +227,8 @@ def mostrar_informacoes_equipe_favorita():
     print(f"Seguidores: {equipe_data['seguidores']}")
     print(f"Instagram: @{equipe_data['instagram']}")
 
-    while True:
-        continuar = input("Você deseja continuar utilizando o programa? (sim/não): ")
-        if continuar.casefold() == "sim":
-            break
-        elif continuar.casefold() == "não":
-            print("Você escolheu sair do programa. Até logo!")
-            exit()
-        else:
-            print("Opção inválida. Por favor, escolha novamente.")
 
+#função adicipnar funcionario
 def adicionar_equipe():
     equipe_nome = input("Digite o nome da equipe: ")
     equipe_pilotos = input("Digite os pilotos da equipe (separados por vírgula): ")
@@ -244,6 +236,7 @@ def adicionar_equipe():
     equipes_formula_e[equipe_nome] = equipe_pilotos
     print("Equipe adicionada com sucesso!")
 
+#função atualizar equipe 
 def atualizar_equipe():
     equipe_nome = input("Digite o nome da equipe que deseja atualizar: ")
     if equipe_nome in equipes_formula_e:
@@ -254,6 +247,7 @@ def atualizar_equipe():
     else:
         print("Equipe não encontrada.")
 
+#função para excluir equipe
 def excluir_equipe():
     equipe_nome = input("Digite o nome da equipe que deseja excluir: ")
     if equipe_nome in equipes_formula_e:
@@ -262,6 +256,7 @@ def excluir_equipe():
     else:
         print("Equipe não encontrada.")
 
+#função de opções para funcionario 
 def funcionario_menu():
     while True:
         print("Menu do Funcionário:")
@@ -282,7 +277,7 @@ def funcionario_menu():
             break
         else:
             print("Opção inválida. Por favor, escolha novamente.")
-
+#função principal
 def main():
     while True:
         print("Seja bem-vindo ao programa de Fórmula E!")

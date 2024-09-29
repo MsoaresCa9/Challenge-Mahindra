@@ -33,9 +33,10 @@ Você pode instalar as dependências usando pip:
 pip install numpy matplotlib keyboard pandas
 ```
 
-## Contribuição
+## Vídeo de Apresentação
+https://youtu.be/ZX8kI8_TlEM
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests. Qualquer ajuda para melhorar o projeto é muito apreciada.
+
 
 ## Licença
 

@@ -14,9 +14,9 @@ Este projeto foi desenvolvido pelos alunos do curso de Engenharia de Software da
    
 4. **Redirecionar para o Site Oficial**: Redireciona para o site oficial da Fórmula E para mais informações sobre corridas, equipes e eventos.
 
-5. **Mostrar informação sobre equipe**: Permite o usuario escolher uma equipe para saber mais sobre ela, como número de títulos, intagram oficial da equipe, número de seguidores, país onde foi criada e quando foi criada.
+5. **Mostrar Informação sobre Equipe**: Permite ao usuário escolher uma equipe para saber mais sobre ela, como número de títulos, Instagram oficial da equipe, número de seguidores, país onde foi criada e quando foi criada.
 
-7. **Funcionário**: Permite ao funcionário adicionar, atualizar e deletar alguma equipe. Na função de adicionar o funcionário insere o nome da equipe que vai ser adicionado e o nome de seus pilotos, caso ele deseja atualizar ele podera atualizar o nome de uma equipe ou apenas alterar o nomedos pilotos da equipe e no excluir ele exclui qualquer informação presente daquela equipe.
+6. **Funcionário**: Permite ao funcionário adicionar, atualizar e deletar informações sobre as equipes. O funcionário pode adicionar uma nova equipe e seus pilotos, atualizar o nome de uma equipe ou alterar os pilotos, e excluir informações de qualquer equipe.
 
 ## Aplicação
 
@@ -32,14 +32,13 @@ Você pode instalar as dependências usando pip:
 ```bash
 pip install numpy matplotlib keyboard pandas
 ```
-## Diagrama de Fluxo do usuario
 
-Imagem do Diagrama ![Uploading Untitled diagram-2024-09-30-125701.png…]()
+## Diagrama de Fluxo do Usuário
+
+![Diagrama de Fluxo](https://www.mermaidchart.com/app/projects/abbb18aa-1b60-4e48-9ef7-1e6e59d815e9/diagrams/dab2adff-dc76-405b-bfa4-65093f914ccc/version/v0.1/edit)
 
 ## Vídeo de Apresentação
-https://youtu.be/ZX8kI8_TlEM
-
-
+[Assista aqui](https://youtu.be/ZX8kI8_TlEM)
 
 ## Licença
 

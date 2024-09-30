@@ -32,6 +32,61 @@ Você pode instalar as dependências usando pip:
 ```bash
 pip install numpy matplotlib keyboard pandas
 ```
+## Diagrama de Fluxo do usuario
+[Início]
+   |
+   v
+[Menu do Funcionário]
+   |
+   +---> [Adicionar Equipe] ----+
+   |                            |
+   |                            v
+   |                  [Inserir Nome da Equipe]
+   |                            |
+   |                            v
+   |                [Inserir Nome dos Pilotos]
+   |                            |
+   |                            v
+   |                 [Confirmar Adição]
+   |                            |
+   +----------------------------+
+   |
+   +---> [Atualizar Equipe] ----+
+   |                            |
+   |                            v
+   |                  [Selecionar Equipe]
+   |                            |
+   |                            v
+   |                  [Atualizar Nome da Equipe?]
+   |                    |       |
+   |                    v       |
+   |          [Inserir Novo Nome]  |
+   |                    |       |
+   |                    v       |
+   |                 [Atualizar Pilotos?]
+   |                    |       |
+   |                    v       |
+   |          [Inserir Novos Pilotos]
+   |                            |
+   |                            v
+   |                 [Confirmar Atualização]
+   |
+   +---> [Excluir Equipe] ----+
+   |                            |
+   |                            v
+   |                  [Selecionar Equipe]
+   |                            |
+   |                            v
+   |                   [Confirmar Exclusão?]
+   |                    |       |
+   |                    v       |
+   |                 [Excluir Dados da Equipe]
+   |                            |
+   v                            v
+[Voltar ao Menu do Funcionário]
+   |
+   v
+[Encerrar Aplicação]
 
 ## Vídeo de Apresentação
 https://youtu.be/ZX8kI8_TlEM

@@ -34,8 +34,7 @@ pip install numpy matplotlib keyboard pandas
 ```
 
 ## Diagrama de Fluxo do Usuário
-
-![Diagrama de Fluxo](https://www.mermaidchart.com/app/projects/abbb18aa-1b60-4e48-9ef7-1e6e59d815e9/diagrams/dab2adff-dc76-405b-bfa4-65093f914ccc/version/v0.1/edit)
+https://www.mermaidchart.com/raw/dab2adff-dc76-405b-bfa4-65093f914ccc?theme=light&version=v0.1&format=svg
 
 ## Vídeo de Apresentação
 [Assista aqui](https://youtu.be/ZX8kI8_TlEM)
